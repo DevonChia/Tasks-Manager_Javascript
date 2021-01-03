@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="section s2" style="color: green;">TASK MANAGER</div>
+        </div>
+        <form class="col s12" id="task-form">
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea id="task" class="task materialize-textarea"></textarea>
+                    <label for="new_task">New Task</label>
+                    <button class="btn waves-effect waves-light" type="submit" name="action" a href="#!">add task
+                    </button>
+                </div>
+            </div>
+        </form>
+        <ul class="collection with-header">
+            <li class="collection-header">
+                <h5>Tasks</h5>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
