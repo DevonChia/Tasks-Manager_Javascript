@@ -11,7 +11,7 @@ function loadEventListeners(){
     document.addEventListener("DOMContentLoaded",reloadTasks);
     newtask.addEventListener("submit",addTask);
     taskcollection.addEventListener("click",removeTask);
-    clearbtn.addEventListener("click",removeAllTasks);
+    clearbtn.addEventListener("click",removeAllTasksfromLocalStorage);
 
 }
 
@@ -121,7 +121,7 @@ function removeTaskfromLocalStorage(taskname){
     localStorage.setItem('tasks',JSON.stringify(tasklist));
 }
 
-function removeAllTasks(e){
+function removeAllTasksfromLocalStorage(e){
     let tasklist = [];
     localStorage.setItem('tasks',JSON.stringify(tasklist));
 
