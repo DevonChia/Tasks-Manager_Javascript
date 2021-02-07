@@ -12,15 +12,18 @@
 <body>
     <div class="container">
         <div class="card">
-            <div class="section s2" style="color: green;">TASK MANAGER</div>
+            <div class="card-content">
+                <span class="card-title" style="color: green">TASK MANAGER</span>
+            </div>
         </div>
+
         <form class="col s12" id="task-form">
             <div class="row">
                 <div class="input-field col s6">
                     <textarea id="task" class="task materialize-textarea"></textarea>
                     <label for="new_task">New Task</label>
-                    <button class="btn waves-effect waves-light" type="submit" name="action" a href="#!">add task
-                    </button>
+                    <button class="btn waves-effect waves-light" type="submit" name="action" a href="#">add task</button>
+                    <button class="clear-btn btn waves-effect waves-light red" type="submit" a href="#">remove all tasks</button>
                 </div>
             </div>
         </form>

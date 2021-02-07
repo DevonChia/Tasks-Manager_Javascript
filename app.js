@@ -1,7 +1,8 @@
-const newtask = document.querySelector('#task-form');
-const taskinput = document.querySelector('#task');
-const tasks = document.querySelector(".tasks");
-const taskcollection = document.querySelector(".collection")
+const newtask = document.querySelector('#task-form'),
+        taskinput = document.querySelector('#task'),
+        tasks = document.querySelector(".tasks"),
+        taskcollection = document.querySelector(".collection"),
+        clearbtn = document.querySelector(".clear-btn");
 
 loadEventListeners();
 
@@ -10,6 +11,8 @@ function loadEventListeners(){
     document.addEventListener("DOMContentLoaded",reloadTasks);
     newtask.addEventListener("submit",addTask);
     taskcollection.addEventListener("click",removeTask);
+    clearbtn.addEventListener("click",removeAllTasks);
+
 }
 
 function removeTask(e){
@@ -116,4 +119,23 @@ function removeTaskfromLocalStorage(taskname){
         }
     })
     localStorage.setItem('tasks',JSON.stringify(tasklist));
+}
+
+function removeAllTasks(e){
+    let tasklist = [];
+    localStorage.setItem('tasks',JSON.stringify(tasklist));
+
+    // Get all task elements
+    const alltasks = document.querySelectorAll('.taskRow')
+    if (alltasks.length !== 0){
+        console.log(alltasks.length)
+        alltasks.forEach(function(task){
+            task.remove();
+        })
+        M.toast({html: 'All Tasks Removed!', displayLength: 1000})
+        M.updateTextFields();
+    }else{
+        alert('No task to be removed!');
+    }
+    e.preventDefault();
 }
