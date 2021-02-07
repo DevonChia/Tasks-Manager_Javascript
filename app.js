@@ -122,13 +122,11 @@ function removeTaskfromLocalStorage(taskname){
 }
 
 function removeAllTasksfromLocalStorage(e){
-    let tasklist = [];
-    localStorage.setItem('tasks',JSON.stringify(tasklist));
+    localStorage.removeItem('tasks');
 
     // Get all task elements
     const alltasks = document.querySelectorAll('.taskRow')
     if (alltasks.length !== 0){
-        console.log(alltasks.length)
         alltasks.forEach(function(task){
             task.remove();
         })
@@ -137,5 +135,7 @@ function removeAllTasksfromLocalStorage(e){
     }else{
         alert('No task to be removed!');
     }
+
+    
     e.preventDefault();
 }
